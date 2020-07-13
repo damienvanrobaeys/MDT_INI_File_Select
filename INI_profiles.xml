@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+' // ***************************************************************************
+' // 
+' // From Syst & Deploy
+' // Microsoft Deployment Toolkit Solution Accelerator
+' // XML File:  Check_Supported_Models.xml
+' // VBS File:  Check_Supported_Models.vbs
+' // Version:   6.3.8330.1000
+' // Purpose:   Check if the running model is supported or not
+' // 
+' // ***************************************************************************
+-->
+
+<Wizard>
+	<Global>
+		<CustomScript>INI_profiles.vbs</CustomScript>			
+		<HideNavigation>true</HideNavigation>
+	</Global>
+	<Pane id="hhh" title="My New Wizard">
+   <Body>
+   <![CDATA[
+<div>	
+	<br>
+	<h1><img src="SD_Profiles.png" style="vertical-align:middle;" width=40px height=40px>&nbsp;INI profile selection</h1>
+	<div style="margin-left:25px">
+			<p>Please select an INI profile file to apply</p>
+			<table>
+				<tr>
+					<td>INI profiles : </td>
+					<td>
+						<select id="profile" onchange="On_Select_Profile" language="vbscript"/>	
+					</td>
+					<td>
+						<!--<span style="margin-left:15px"><label class=ErrMsg id=ProfileFolder_Error>* No INI Profile folder found</label></span>	-->
+						<span style="margin-left:15px" id ="ProfileFolder_Error"></span>							
+					</td>
+				</tr>
+			</table>
+	</div>	
+</div>	
+
+]]></Body>
+		<Initialization><![CDATA[Wizard_Display]]></Initialization>
+		<Initialization><![CDATA[Listprofile]]></Initialization>
+	</Pane>
+</Wizard>
